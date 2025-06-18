@@ -2,20 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Header Example</title>
+  <title>Baibhavi Pandey - Portfolio</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      background-color: #fff;
     }
 
+    /* Header */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 30px 50px; 
-      background-color: rgb(43, 177, 226); 
+      padding: 30px 50px;
+      background-color: seagreen;
       color: white;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
     }
 
     .nav-links a {
@@ -30,24 +37,75 @@
       text-decoration: underline;
     }
 
-    .logo {
-      font-size: 22px;
+    /* Main section */
+    .main-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 50px auto 0 auto; /* Space from header + center horizontally */
+      padding: 40px;
+      width: 80%;
+      max-width: 900px;
+      background-color: #f0f0f0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .text-block {
+      flex: 1;
+      font-size: 36px;
       font-weight: bold;
+      color: #2f2f2f;
+      padding-right: 20px;
+    }
+
+    .image-block {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-block img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .main-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .text-block {
+        margin-bottom: 20px;
+        padding-right: 0;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header>
     <div class="logo">Baibhavi Pandey</div>
     <div class="nav-links">
       <a href="#">Home</a>
+      <a href="#">About</a>
       <a href="#">Services</a>
-      <a href="#">Project</a>
-      <a href="#">Skills</a>
-      <a href="#">Contacts</a>
     </div>
   </header>
+
+  <!-- Main Section -->
+  <section class="main-section">
+    <div class="text-block">
+      MERN Stack Developer
+    </div>
+    <div class="image-block">
+      <img src="https://via.placeholder.com/350x250" alt="Developer Image">
+    </div>
+  </section>
 
 </body>
 </html>
