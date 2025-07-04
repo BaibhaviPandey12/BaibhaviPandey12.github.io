@@ -1,111 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Baibhavi Pandey - Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baibhavi Pandey</title>
+  <link rel="icon" type="image/x-icon" href="ball.png" />
   <style>
-    body {
+    /* General Reset and Font */
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fff;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      scroll-behavior: smooth;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .container {
+      position: fixed;
+      overflow: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 100%;
     }
 
     /* Header */
-    header {
+    .header-row {
+      background: linear-gradient(to right, #7f53ac, #647dee);
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 30px 50px;
-      background-color: seagreen;
-      color: white;
+      position: sticky;
+      top: 0;
+      padding: 10px 20px;
+      z-index: 1000;
+      animation: slideDown 0.6s ease-out;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
+    .header-row h1 {
+      font-size: 28px;
     }
 
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 30px;
-      font-weight: bold;
+    .header-row ul {
+      list-style: none;
+    }
+
+    .header-row li {
+      display: inline;
+      margin-left: 15px;
       font-size: 18px;
     }
 
-    .nav-links a:hover {
+    .header-row a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .header-row a:hover {
       text-decoration: underline;
     }
 
-    /* Main section */
-    .main-section {
+    /* Sections */
+    .row {
+      padding: 80px 100px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .row .box {
+      padding: 20px;
+      margin: 10px;
+      flex: 1;
+    }
+
+    .row h1 {
+      color: #4b0082;
+      margin-bottom: 30px;
+    }
+
+    .row h3 {
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .row p {
+      line-height: 1.7;
+      color: #333;
+    }
+
+    /* Buttons */
+    button {
+      background-color: #00bfa6;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 10px;
+      margin-right: 10px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background-color: #00897b;
+    }
+
+    /* Inputs */
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 20px;
+      background-color: #222;
+      color: white;
+      text-align: center;
+    }
+
+    /* Layout Flex */
+    .flex {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
-      align-items: center;
-      margin: 50px auto 0 auto; /* Space from header + center horizontally */
-      padding: 40px;
-      width: 80%;
-      max-width: 900px;
-      background-color: #f0f0f0;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .text-block {
-      flex: 1;
-      font-size: 36px;
-      font-weight: bold;
-      color: #2f2f2f;
-      padding-right: 20px;
+    .profile-img {
+      border-radius: 50%;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+      transition: transform 0.5s ease;
     }
 
-    .image-block {
-      flex: 1;
-      display: flex;
-      justify-content: center;
+    .profile-img:hover {
+      transform: scale(1.05);
     }
 
-    .image-block img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
-      .main-section {
+      .flex {
         flex-direction: column;
-        text-align: center;
       }
 
-      .text-block {
-        margin-bottom: 20px;
-        padding-right: 0;
+      .row {
+        padding: 60px 30px;
       }
     }
   </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <div class="logo">Baibhavi Pandey</div>
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
+  <div class="container">
+    <div class="header-row">
+      <h1>Baibhavi Pandey</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-  </header>
 
-  <!-- Main Section -->
-  <section class="main-section">
-    <div class="text-block">
-      MERN Stack Developer
+    <!-- Home -->
+    <div class="row" id="home">
+      <div class="flex">
+        <div class="box">
+          <h1>Full Stack Developer</h1>
+          <p>
+            Passionate about developing user-friendly, efficient, and scalable web applications.
+            Skilled in both frontend and backend technologies to deliver complete digital solutions.
+          </p>
+          <p>
+            Dedicated to continuous learning and always looking for exciting challenges to grow and contribute.
+          </p>
+          <button>Hire Me</button>
+          <button>Download Resume</button>
+        </div>
+        <div class="box">
+          <img src="https://picsum.photos/id/2/300/300" alt="Profile Image" class="profile-img"/>
+        </div>
+      </div>
     </div>
-    <div class="image-block">
-      <img src="https://via.placeholder.com/350x250" alt="Developer Image">
-    </div>
-  </section>
 
+    <!-- Projects -->
+    <div class="row" id="projects" style="background-color: #fff0f5;">
+      <h1>Projects</h1>
+      <div class="flex">
+        <div class="box">
+          <h3>Task Scheduler (PHP)</h3>
+          <p>Built a CRON-based PHP task scheduler with file-based storage, user reminders, and task management.</p>
+        </div>
+        <div class="box">
+          <h3>Hotel Management (MERN)</h3>
+          <p>Full-stack hotel booking system using React, Node.js & MongoDB. Includes admin dashboard & booking analytics.</p>
+        </div>
+        <div class="box">
+          <h3>Online Store (React + MySQL)</h3>
+          <p>Developed an eCommerce site with product catalog, cart system, and backend integration for inventory control.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="row" id="services" style="background-color: #e6f2ff;">
+      <h1>Services</h1>
+      <div class="flex">
+        <div class="box">
+          <h3>Web App Development</h3>
+          <p>Custom-built websites & dashboards with React, PHP, and MySQL tailored to client needs.</p>
+        </div>
+        <div class="box">
+          <h3>Mobile App Development</h3>
+          <p>Cross-platform mobile apps with modern UI using React Native and Flutter basics.</p>
+        </div>
+        <div class="box">
+          <h3>Backend Development</h3>
+          <p>Secure and scalable backend systems using Node.js, Laravel, and REST APIs.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="row" id="about">
+      <h1>About Me</h1>
+      <h3>I’m Baibhavi Pandey, a full-stack developer dedicated to writing clean, maintainable code. I blend frontend beauty with backend power.</h3>
+      <h2>Skills</h2>
+      <h3>Java, Python, React.js, PHP, MySQL</h3>
+      <p>Technologies I use: <strong>React</strong>, <strong>PHP</strong>, <strong>MySQL</strong>, <strong>JavaScript</strong>, <strong>Node.js</strong>, <strong>Bootstrap</strong></p>
+    </div>
+
+    <!-- Contact -->
+    <div class="row" id="contact" style="background-color: #fffbe6;">
+      <h1>Contact</h1>
+      <div class="flex">
+        <div class="box">
+          <h3>Contact Form</h3>
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <textarea rows="5" placeholder="Your Message"></textarea>
+          <button>Send</button>
+        </div>
+        <div class="box">
+          <h3>Baibhavi Pandey</h3>
+          <p><b>Address:</b> BEACON BRO Quarters, Srinagar, India</p>
+          <p><b>Email:</b> baibhavipandey07@gmail.com</p>
+          <p><b>Phone:</b> +91 9651234515</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      &copy; 2024 Baibhavi Pandey. All rights reserved.
+    </div>
+  </div>
 </body>
 </html>

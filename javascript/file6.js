@@ -26,3 +26,8 @@
 //  const result = add(4,5)
 // console.log(result)
 
+const add=(...args)=>{
+    console.log(args)
+      console.log(args[1])
+}
+add(4,5,6,7,8)
